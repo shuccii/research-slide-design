@@ -1,0 +1,3 @@
+# CHANGELOG
+
+- 2026-10-20: 初版(公開)。非公開の研究用デザインシステム B(白黒・高密度)を元に、16:9 を標準化。色のコントラストを引き上げ(ink-sub #404040、caption #595959、alert #A04500)、色の役割(roles)を追加。表を色なし・黒罫線に変更。余白は文字・図を大きくして埋める規則と文字サイズの上限を追加。python-pptx ビルダー `lib/research_deck.py`、見本デッキ(16:9、7 枚)、数式の LaTeX 代替テキスト・プレースホルダー・一括変換(`--convert` / `--extract`)、図の作成フロー(`guides/figures.md`、`scripts/export_svg.sh`)、用途別の手引き、依頼書式を追加。PowerPoint 用の書体名を `Hiragino Kaku Gothic ProN W3/W6` に固定。

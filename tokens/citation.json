@@ -1,0 +1,18 @@
+{
+  "style": "ACS 風の番号式(登場順)",
+  "in_text": { "format": "[1]", "multiple": "[1,3]", "range": "[2–4]", "place": "主張・数値・図の直後。文末の句点の前" },
+  "figure_credit": { "adapted": "Adapted from [n]", "reproduced": "Reproduced from [n]", "own": "本研究(未発表)", "sample": "見本データ。研究結果ではない", "place": "図の直下に caption" },
+  "footer": { "format": "[n] Author, A. A. et al. J. Abbr. Year, Vol, Page.", "rule": "そのページで引いた文献だけを短縮形で。著者は筆頭+et al.、2行まで" },
+  "references_slide": {
+    "format": "Author, A. A.; Author, B. B.; Author, C. C. Title. J. Abbr. Year, Vol (Issue), Pages. https://doi.org/xxxx",
+    "web": "Organization. Title. URL (accessed YYYY-MM-DD).",
+    "book": "Author, A. A. Book Title, ed.; Publisher: City, Year.",
+    "order": "本文の登場順",
+    "font": "caption 10pt、2段組、1ページ14件まで"
+  },
+  "rules": [
+    "出典を確認できない数値・図は載せない",
+    "他人の図はライセンスを確認し、Adapted / Reproduced を明記する",
+    "DOI があれば必ず書く。Web 資料には確認日を書く"
+  ]
+}

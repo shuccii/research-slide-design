@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 470" width="1600" height="470" font-family="Hiragino Kaku Gothic ProN, Hiragino Sans, Yu Gothic, Meiryo, sans-serif">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1A1A1A"/></marker></defs>
+<rect width="1600" height="470" fill="#FFFFFF"/>
+<text x="60" y="64" font-size="32" font-weight="600" fill="#1A1A1A" text-anchor="start" xml:space="preserve">図の作成フロー: 描く前に構成を文字で決め、書き出して目で確かめる</text>
+<line x1="60" y1="88" x2="1540" y2="88" stroke="#595959" stroke-width="1.5"/>
+<line x1="60.0" y1="140" x2="276.66666666666663" y2="140" stroke="#1A1A1A" stroke-width="5"/>
+<text x="60.0" y="180.3" font-size="26" font-weight="600" fill="#1A1A1A" text-anchor="start" xml:space="preserve">1 入力を読む</text>
+<text x="60.0" y="222.10000000000002" font-size="22" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">元資料・データ</text>
+<text x="60.0" y="257.3" font-size="22" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">貼る枠の大きさ</text>
+<line x1="280.66666666666663" y1="140" x2="306.66666666666663" y2="140" stroke="#1A1A1A" stroke-width="2.5" marker-end="url(#arrow)"/>
+<line x1="312.66666666666663" y1="140" x2="529.3333333333333" y2="140" stroke="#1A1A1A" stroke-width="5"/>
+<text x="312.66666666666663" y="180.3" font-size="26" font-weight="600" fill="#1A1A1A" text-anchor="start" xml:space="preserve">2 型を選ぶ</text>
+<text x="312.66666666666663" y="222.10000000000002" font-size="22" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">パイプライン</text>
+<text x="312.66666666666663" y="257.3" font-size="22" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">ループ・比較 …</text>
+<line x1="533.3333333333333" y1="140" x2="559.3333333333333" y2="140" stroke="#1A1A1A" stroke-width="2.5" marker-end="url(#arrow)"/>
+<line x1="565.3333333333333" y1="140" x2="781.9999999999999" y2="140" stroke="#1A1A1A" stroke-width="5"/>
+<text x="565.3333333333333" y="180.3" font-size="26" font-weight="600" fill="#1A1A1A" text-anchor="start" xml:space="preserve">3 構成を文字に</text>
+<text x="565.3333333333333" y="222.10000000000002" font-size="22" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">ノードと矢印</text>
+<text x="565.3333333333333" y="257.3" font-size="22" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">ラベルの出典</text>
+<line x1="785.9999999999999" y1="140" x2="811.9999999999999" y2="140" stroke="#1A1A1A" stroke-width="2.5" marker-end="url(#arrow)"/>
+<line x1="818.0" y1="140" x2="1034.6666666666667" y2="140" stroke="#0072B2" stroke-width="5"/>
+<text x="818.0" y="180.3" font-size="26" font-weight="600" fill="#0072B2" text-anchor="start" xml:space="preserve">4 描く</text>
+<text x="818.0" y="222.10000000000002" font-size="22" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">Python で SVG</text>
+<text x="818.0" y="257.3" font-size="22" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">色は roles</text>
+<line x1="1038.6666666666667" y1="140" x2="1064.6666666666667" y2="140" stroke="#1A1A1A" stroke-width="2.5" marker-end="url(#arrow)"/>
+<line x1="1070.6666666666665" y1="140" x2="1287.3333333333333" y2="140" stroke="#1A1A1A" stroke-width="5"/>
+<text x="1070.6666666666665" y="180.3" font-size="26" font-weight="600" fill="#1A1A1A" text-anchor="start" xml:space="preserve">5 書き出す</text>
+<text x="1070.6666666666665" y="222.10000000000002" font-size="22" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">export_svg.sh</text>
+<text x="1070.6666666666665" y="257.3" font-size="22" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">PDF と PNG</text>
+<line x1="1291.3333333333333" y1="140" x2="1317.3333333333333" y2="140" stroke="#1A1A1A" stroke-width="2.5" marker-end="url(#arrow)"/>
+<line x1="1323.3333333333333" y1="140" x2="1540.0" y2="140" stroke="#1A1A1A" stroke-width="5"/>
+<text x="1323.3333333333333" y="180.3" font-size="26" font-weight="600" fill="#1A1A1A" text-anchor="start" xml:space="preserve">6 確かめる</text>
+<text x="1323.3333333333333" y="222.10000000000002" font-size="22" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">目視・最小 12 pt</text>
+<text x="1323.3333333333333" y="257.3" font-size="22" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">出典を図の下に</text>
+<line x1="1431.6666666666665" y1="330" x2="1431.6666666666665" y2="380" stroke="#A04500" stroke-width="2" stroke-dasharray="8 6"/>
+<line x1="1431.6666666666665" y1="380" x2="926.3333333333334" y2="380" stroke="#A04500" stroke-width="2" stroke-dasharray="8 6"/>
+<line x1="926.3333333333334" y1="380" x2="926.3333333333334" y2="336" stroke="#A04500" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+<text x="1179.0" y="416" font-size="22" font-weight="300" fill="#A04500" text-anchor="middle" xml:space="preserve">重なり・はみ出し・小さい文字があれば 4 に戻る</text>
+</svg>

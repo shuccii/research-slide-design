@@ -1,0 +1,122 @@
+{
+  "family": {
+    "sans": [
+      "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans",
+      "Yu Gothic",
+      "Meiryo"
+    ],
+    "pptx": {
+      "regular": "Hiragino Kaku Gothic ProN W3",
+      "bold": "Hiragino Kaku Gothic ProN W6",
+      "note": "PowerPoint for Mac にはウェイト付きの名前で指定する(ファミリー名だけだと MS ゴシック・Calibri に置き換わる。2026-10-20 確認)。Windows で開くと游ゴシックなどに置き換わるので、配布は PDF で行う"
+    },
+    "math": [
+      "Cambria Math"
+    ],
+    "mono": [
+      "Menlo",
+      "Consolas"
+    ],
+    "note": "ヒラギノ角ゴ ProN は W3(標準)と W6(太字)。Windows では游ゴシック・メイリオに置き換わる。数式は PowerPoint 標準の Cambria Math"
+  },
+  "unit": "pt (4:3, 10 x 7.5 in)",
+  "styles": {
+    "cover-title": {
+      "size": 28,
+      "weight": 600,
+      "color": "ink",
+      "line_height": 1.3
+    },
+    "cover-sub": {
+      "size": 16,
+      "weight": 300,
+      "color": "ink-sub",
+      "line_height": 1.4
+    },
+    "title": {
+      "size": 22,
+      "weight": 600,
+      "color": "ink",
+      "line_height": 1.25,
+      "use": "結論か主題を1文で",
+      "max": 26
+    },
+    "message": {
+      "size": 14,
+      "weight": 300,
+      "color": "ink-sub",
+      "line_height": 1.3,
+      "use": "タイトル直下。何を比べた図・表か",
+      "max": 16
+    },
+    "heading": {
+      "size": 14,
+      "weight": 600,
+      "color": "ink",
+      "line_height": 1.3,
+      "use": "本文内の小見出し(図・表の上)",
+      "max": 18
+    },
+    "body": {
+      "size": 16,
+      "weight": 300,
+      "color": "ink",
+      "line_height": 1.4,
+      "max": 22
+    },
+    "table": {
+      "size": 12,
+      "weight": 300,
+      "color": "ink",
+      "line_height": 1.25,
+      "use": "表の中身。列が少なければ 14pt まで上げてよい",
+      "max": 16
+    },
+    "label": {
+      "size": 12,
+      "weight": 300,
+      "color": "ink-sub",
+      "line_height": 1.3,
+      "use": "図表ラベル・軸・凡例・注",
+      "max": 14
+    },
+    "number": {
+      "size": 24,
+      "weight": 600,
+      "color": "ink",
+      "line_height": 1.1,
+      "use": "要点数値。強調するものだけ accent",
+      "max": 40
+    },
+    "equation": {
+      "size": 18,
+      "weight": 300,
+      "color": "ink",
+      "family": "math",
+      "use": "別行立ての式。文中の式は body と同じ 16pt",
+      "max": 24
+    },
+    "eq-number": {
+      "size": 12,
+      "weight": 300,
+      "color": "ink-sub",
+      "use": "式番号 (1)(2)。式の右端にそろえる"
+    },
+    "caption": {
+      "size": 10,
+      "weight": 300,
+      "color": "caption",
+      "line_height": 1.3,
+      "use": "出典欄・文献表・ページ番号のみ",
+      "max": 12
+    }
+  },
+  "rules": [
+    "本文は 16pt 未満にしない。12pt は表・図表ラベル・注、10pt は出典欄と文献表だけ",
+    "余白が残るときは、まず文字と図を大きくする(各スタイルの max まで)。それでも空くときに条件表 → 要点数値 → 注 → 関連文献を足す。小さい文字のまま余白を残さない",
+    "太字(W6)はタイトル・小見出し・要点数値だけ。本文の強調は accent で行う",
+    "行間は本文 1.4、注 1.3。DADS の本文行間(150–175%)より詰めるのは投影スライドの高密度化のため [7]",
+    "和文と欧文を同じ書体で組む。数式だけ Cambria Math"
+  ]
+}

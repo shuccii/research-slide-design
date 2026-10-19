@@ -1,0 +1,15 @@
+{
+  "$note": "表は色を使わず、黒の罫線で区切る",
+  "font": "typography.styles.table(12pt、列が少なければ 14pt)",
+  "fill": "なし(見出し行も塗らない)",
+  "header": { "weight": 600, "rule_below": "ink 1.0pt" },
+  "rules_top_bottom": "ink 1.0pt(表の上端と下端)",
+  "rules_rows": "ink 0.5pt(全ての行の間)",
+  "rules_columns": "ink 0.5pt(全ての列の間。外枠の左右は引かない)",
+  "align": { "first_column": "left", "text": "left", "numbers": "right(小数点の桁をそろえる)", "vertical": "middle" },
+  "cell_margin_in": { "left_right": 0.06, "top_bottom": 0.03 },
+  "row_height_in": 0.3,
+  "max_rows": 8,
+  "highlight": "原則なし。決め手を示す必要があるときだけ、そのセルの文字を W6 にし、本文で言葉でも示す(色は使わない)",
+  "notes": "表の直下に label 12pt で単位・条件・出典 [n] を書く。単位は列見出しに [ ] で付ける"
+}

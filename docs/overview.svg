@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Hiragino Kaku Gothic ProN, Hiragino Sans, Yu Gothic, Meiryo, sans-serif">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1A1A1A"/></marker></defs>
+<rect width="1600" height="900" fill="#FFFFFF"/>
+<text x="60" y="70" font-size="36" font-weight="600" fill="#1A1A1A" text-anchor="start" xml:space="preserve">研究・高密度スライドのデザインシステム: AI エージェントが読む順番</text>
+<line x1="60" y1="95" x2="1540" y2="95" stroke="#595959" stroke-width="1.5"/>
+<line x1="60.0" y1="140" x2="316.0" y2="140" stroke="#1A1A1A" stroke-width="5"/>
+<text x="60.0" y="195.8" font-size="36" font-weight="600" fill="#1A1A1A" text-anchor="start" xml:space="preserve">入力</text>
+<text x="60.0" y="245.20000000000002" font-size="26" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">依頼(slide-brief)</text>
+<text x="60.0" y="286.8" font-size="26" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">データ・図の元</text>
+<text x="60.0" y="328.40000000000003" font-size="26" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">文献(DOI・URL)</text>
+<line x1="366.0" y1="140" x2="622.0" y2="140" stroke="#1A1A1A" stroke-width="5"/>
+<text x="366.0" y="195.8" font-size="36" font-weight="600" fill="#1A1A1A" text-anchor="start" xml:space="preserve">読む</text>
+<text x="366.0" y="245.20000000000002" font-size="26" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">AGENTS.md</text>
+<text x="366.0" y="286.8" font-size="26" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">DESIGN.md</text>
+<text x="366.0" y="328.40000000000003" font-size="26" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">guides/</text>
+<line x1="672.0" y1="140" x2="928.0" y2="140" stroke="#0072B2" stroke-width="5"/>
+<text x="672.0" y="195.8" font-size="36" font-weight="600" fill="#0072B2" text-anchor="start" xml:space="preserve">値を取る</text>
+<text x="672.0" y="245.20000000000002" font-size="26" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">tokens/*.json</text>
+<text x="672.0" y="286.8" font-size="26" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">色・文字・余白</text>
+<text x="672.0" y="328.40000000000003" font-size="26" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">表・引用・図</text>
+<line x1="978.0" y1="140" x2="1234.0" y2="140" stroke="#1A1A1A" stroke-width="5"/>
+<text x="978.0" y="195.8" font-size="36" font-weight="600" fill="#1A1A1A" text-anchor="start" xml:space="preserve">組む</text>
+<text x="978.0" y="245.20000000000002" font-size="26" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">lib/research_deck.py</text>
+<text x="978.0" y="286.8" font-size="26" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">layouts/ の 10 種</text>
+<text x="978.0" y="328.40000000000003" font-size="26" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">tools/latex_eq.py</text>
+<line x1="1284.0" y1="140" x2="1540.0" y2="140" stroke="#1A1A1A" stroke-width="5"/>
+<text x="1284.0" y="195.8" font-size="36" font-weight="600" fill="#1A1A1A" text-anchor="start" xml:space="preserve">確かめる</text>
+<text x="1284.0" y="245.20000000000002" font-size="26" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">PDF → PNG で目視</text>
+<text x="1284.0" y="286.8" font-size="26" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">contrast.py</text>
+<text x="1284.0" y="328.40000000000003" font-size="26" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">納品前チェック</text>
+<line x1="322.0" y1="140" x2="360.0" y2="140" stroke="#1A1A1A" stroke-width="2.5" marker-end="url(#arrow)"/>
+<line x1="628.0" y1="140" x2="666.0" y2="140" stroke="#1A1A1A" stroke-width="2.5" marker-end="url(#arrow)"/>
+<line x1="934.0" y1="140" x2="972.0" y2="140" stroke="#1A1A1A" stroke-width="2.5" marker-end="url(#arrow)"/>
+<line x1="1240.0" y1="140" x2="1278.0" y2="140" stroke="#1A1A1A" stroke-width="2.5" marker-end="url(#arrow)"/>
+<line x1="60" y1="450" x2="1540" y2="450" stroke="#595959" stroke-width="1.5"/>
+<text x="60" y="510" font-size="34" font-weight="600" fill="#1A1A1A" text-anchor="start" xml:space="preserve">出力</text>
+<text x="60" y="572" font-size="30" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">・16:9 の PPTX(4:3 も可)</text>
+<text x="60" y="626" font-size="30" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">・ネイティブ数式+代替テキストに LaTeX</text>
+<text x="60" y="680" font-size="30" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">・SVG / PDF / PNG の図と生成スクリプト</text>
+<text x="60" y="734" font-size="30" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">・文献表と図表の出典表</text>
+<text x="820" y="510" font-size="34" font-weight="600" fill="#1A1A1A" text-anchor="start" xml:space="preserve">守る規則</text>
+<text x="820" y="572" font-size="30" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">・1 スライド 1 イシュー、タイトルは結論</text>
+<text x="820" y="626" font-size="30" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">・余白は文字・図を大きくして埋める</text>
+<text x="820" y="680" font-size="30" font-weight="300" fill="#0072B2" text-anchor="start" xml:space="preserve">・色は役割のある場所だけ(本研究 = 青)</text>
+<text x="820" y="734" font-size="30" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">・表は色なし・黒罫線</text>
+<text x="820" y="788" font-size="30" font-weight="300" fill="#A04500" text-anchor="start" xml:space="preserve">・出典のない数値・図は載せない</text>
+<text x="60" y="878" font-size="22" font-weight="300" fill="#595959" text-anchor="start" xml:space="preserve">模式図。各ファイルの役割は README のファイル構成を参照</text>
+</svg>

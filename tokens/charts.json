@@ -1,0 +1,28 @@
+{
+  "series_source": "colors.json の series(色)/ markers / linestyles。5系列を超えたら図を分ける",
+  "axis": "#404040",
+  "grid": "#E6E6E6",
+  "baseline": "#595959",
+  "line_width_pt": 1.5,
+  "marker_size_pt": 5,
+  "font_size_pt": {
+    "tick": 12,
+    "label": 12,
+    "legend": 12,
+    "direct_label": 12
+  },
+  "rules": [
+    "上と右の枠線を消し、グリッドは y 方向だけ grid で薄く [5,6]",
+    "凡例より直接ラベル(線の右端に series-text の色で系列名)を優先する [4]",
+    "軸ラベルに単位を [ ] で付ける(例: 1000/T [K⁻¹])",
+    "パリティプロットは y = x を baseline の破線で入れ、縦横の範囲をそろえる",
+    "誤差棒・信頼区間を描いたら、何の幅か(±1σ、95% CI など)を図の注に書く",
+    "図の中の文字は 12pt 相当以上で書き出す(貼り付け後の実寸で確認)",
+    "本研究・提案手法の系列は accent(series[1])、比較手法は ink と series[2:]。色の役割は colors.json の roles"
+  ],
+  "export": {
+    "format": "SVG/PDF(ベクター)を優先。PNG は 300 dpi 以上",
+    "size": "貼り付け先の枠の実寸(in)で描く。縮小・拡大して文字の大きさを変えない",
+    "style_file": "lib/research.mplstyle"
+  }
+}
