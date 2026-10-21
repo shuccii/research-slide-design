@@ -135,8 +135,24 @@ def _prep_mathml(root):
     return root
 
 
+def check_fraction_style(latex: str):
+    """分数は横線(\\frac)で書く決まり。\\text{…} の外にスラッシュがあれば止める。"""
+    import re
+    body = re.sub(r"\\(text|mathrm|operatorname)\{[^{}]*\}", "", latex)
+    if "/" in body:
+        raise LatexEquationError(f"分数はスラッシュ(a/b)ではなく \\frac{{a}}{{b}}(横線)で書く: {latex!r}")
+
+
+def _force_bar_fractions(math):
+    """OMML の分数を横線(bar)にそろえる。斜線(skw)・一行(lin)の指定を消す。"""
+    for t in math.iter(f"{{{NS['m']}}}type"):
+        if t.get(f"{{{NS['m']}}}val") in ("skw", "lin"):
+            t.getparent().remove(t)
+
+
 def latex_to_omml(latex: str, display: bool = True) -> etree._Element:
     """LaTeX を m:oMath 要素にする(display=True で総和の添字を上下に置く別行立て)。失敗したら LatexEquationError。"""
+    check_fraction_style(latex)
     try:
         import latex2mathml.converter as l2m
     except ImportError as e:  # pragma: no cover
@@ -167,6 +183,7 @@ def latex_to_omml(latex: str, display: bool = True) -> etree._Element:
     for sep in math.iter(f"{{{NS['m']}}}sepChr"):
         if not sep.get(f"{{{NS['m']}}}val"):
             sep.getparent().remove(sep)
+    _force_bar_fractions(math)
     return math
 
 
@@ -328,6 +345,7 @@ def latex_to_mathml_checked(latex: str):
     from latex2mathml.converter import convert
     if latex.count("{") != latex.count("}"):
         raise LatexEquationError("波括弧の数が合わない: " + latex)
+    check_fraction_style(latex)
     try:
         return convert(latex)
     except Exception as e:  # noqa: BLE001

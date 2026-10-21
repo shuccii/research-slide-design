@@ -33,6 +33,14 @@ class SVG:
     def rect(self, x, y, w, h, stroke="ink", width=1.5, fill="background"):
         self.items.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{C[fill]}" stroke="{C[stroke]}" stroke-width="{width}"/>')
 
+    def frac(self, x, y, num, den, size=24, color="ink"):
+        """分数を分子・横線・分母に組む(スラッシュで書かない)。x は横線の中心、y は横線の高さ。"""
+        w = max(len(num), len(den)) * size * 0.62 + size * 0.3
+        self.text(x, y - size * 0.25, num, size, color, anchor="middle")
+        self.line(x - w / 2, y, x + w / 2, y, color, max(1.2, size / 18))
+        self.text(x, y + size * 0.95, den, size, color, anchor="middle")
+        return w
+
     def save(self, path):
         head = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {self.w} {self.h}" width="{self.w}" height="{self.h}" '
                 f'font-family="{FONT}">\n<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" '

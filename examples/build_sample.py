@@ -222,19 +222,21 @@ def build():
         if i < 4:
             s.arrow(x + sw - 0.4, s.top + 0.28, x + sw - 0.08, s.top + 0.28)
     ex, ew = s.col(0, 7)
-    s.equation(r"\bar{f}_{*} = \mathbf{k}_{*}^{\top}\left(K + \sigma_{n}^{2} I\right)^{-1}\mathbf{y}", ex, 2.45, ew, 0.8, number=1, size=24)
-    s.equation(r"\mathbb{V}[f_{*}] = k(\mathbf{x}_{*}, \mathbf{x}_{*}) - \mathbf{k}_{*}^{\top}\left(K + \sigma_{n}^{2} I\right)^{-1}\mathbf{k}_{*}", ex, 3.3, ew, 0.8, number=2, size=24)
-    s.text(ex, 4.18, ew, 0.3, "式 (1)(2) は GPR の予測平均と予測分散 [1]。95% 区間は平均 ± 1.96σ", "label", size=14)
+    s.equation(r"\bar{f}_{*} = \mathbf{k}_{*}^{\top}\left(K + \sigma_{n}^{2} I\right)^{-1}\mathbf{y}", ex, 2.22, ew, 0.6, number=1, size=20)
+    s.equation(r"\mathbb{V}[f_{*}] = k(\mathbf{x}_{*}, \mathbf{x}_{*}) - \mathbf{k}_{*}^{\top}\left(K + \sigma_{n}^{2} I\right)^{-1}\mathbf{k}_{*}", ex, 2.84, ew, 0.6, number=2, size=20)
+    s.equation(r"\mathrm{RMSE} = \sqrt{\frac{1}{N}\sum_{i=1}^{N}\left(y_{i} - \hat{y}_{i}\right)^{2}}", ex, 3.5, ew, 1.2, number=3, size=20)
+    s.text(ex, 4.74, ew, 0.3, "(1)(2) GPR の予測平均・予測分散 [1]、(3) 評価指標の定義", "label", size=14)
     vx, vw = s.col(7, 5)
     s.table(vx, 2.4, vw, [["記号", "意味", "単位"], ["x*", "予測したい点の記述子", "任意"], ["k*", "学習点と x* の共分散", "–"],
-                          ["K", "学習点どうしの共分散行列", "–"], ["σn²", "観測雑音の分散", "任意²"], ["y", "学習データの目的変数", "任意"]],
-            col_widths=[vw * 0.17, vw * 0.63, vw * 0.2], align=["l", "l", "l"], row_h=0.36, size=14)
+                          ["K", "学習点どうしの共分散行列", "–"], ["σn²", "観測雑音の分散", "任意²"], ["y", "学習データの目的変数", "任意"],
+                          ["N", "テスト点の数(200)", "点"], ["yi, ŷi", "i 番目の真値と予測値", "任意"]],
+            col_widths=[vw * 0.17, vw * 0.63, vw * 0.2], align=["l", "l", "l"], row_h=0.33, size=14)
     fx, fw = s.col(0, 12)
-    s.table(fx, 4.65, fw, [["項目", "設定"], ["データ", "y = sin(2πx) + 0.5x + ε、x ~ U(0, 1)、ε ~ N(0, 0.15²)"],
+    s.table(fx, 5.12, fw, [["項目", "設定"], ["データ", "y = sin(2πx) + 0.5x + ε、x ~ U(0, 1)、ε ~ N(0, 0.15²)"],
                            ["カーネル", "定数 × RBF(初期長さ 0.2)+ 白色雑音。目的変数は正規化"],
                            ["比較手法", "線形回帰、ランダムフォレスト(200 本)[2]"],
                            ["評価", "テスト 200 点の RMSE・MAE・R²、95% 区間の被覆率"]],
-            col_widths=[1.8, fw - 1.8], align=["l", "l"], row_h=0.4, size=15)
+            col_widths=[1.8, fw - 1.8], align=["l", "l"], row_h=0.34, size=15)
     s.sources([SHORT[1], SHORT[2], SHORT[3]])
     s.notes("式は代替テキストに LaTeX を保存してある(tools/latex_eq.py --extract で一覧)。")
 
@@ -284,7 +286,7 @@ def build():
     s = d.slide("まとめ: 少量データでは予測の不確かさを一緒に示す", "見本デッキの結論と限界")
     x, w = s.col(0, 5)
     s.heading(x, s.top, w, "結論", size=18)
-    s.bullets(x, s.top + 0.42, w, 3.2, [f"n = 20 で GPR の RMSE は {gpr['rmse']:.3f}、線形回帰の約 1/{lin['rmse'] / gpr['rmse']:.0f}(p.4)",
+    s.bullets(x, s.top + 0.42, w, 3.2, [f"n = 20 で GPR の RMSE は {gpr['rmse']:.3f}、線形回帰より {(1 - gpr['rmse'] / lin['rmse']) * 100:.0f}% 小さい(p.4)",
                                         "RF との差は n = 80 で縮む(p.5)",
                                         f"95% 区間はテスト点の {cov} を含む(p.2, p.4)"], size=20, spacing=10)
     x, w = s.col(5, 4)
