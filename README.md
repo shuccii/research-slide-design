@@ -28,6 +28,16 @@ Claude Code / Codex などの AI エージェントがそのまま読める形(D
 
 PDF: [examples/out/sample_16x9.pdf](examples/out/sample_16x9.pdf)
 
+### 追加レイアウト6種（16:9）
+
+同じ規定のまま、比較・検証・考察に使える構成を追加。基本10種との選び分けは [ガイド](guides/layout-selection.md)。
+
+![追加レイアウト6種](docs/layout-gallery/contact-sheet.png)
+
+[PDF](examples/out/layout_gallery/layout_gallery_16x9.pdf) / [編集できるPowerPoint](examples/out/layout_gallery/layout_gallery_16x9.pptx) / [生成スクリプト](examples/build_layout_gallery.py)
+
+数値はすべて見本データ。対照比較・残差図は合成関数から計算し、要素別検証の値は配置確認用に設定した定数。研究結果ではない。
+
 ## ファイル構成
 
 ```
@@ -45,11 +55,14 @@ research-slide-design/
 │   ├── tables.json            色なし・黒罫線の表
 │   ├── charts.json            グラフの様式
 │   └── citation.json          引用・出典欄・文献表の書式(ACS 風)
-├── layouts/                   10 種のページ構成+16:9 の対応表
+├── layouts/                   16 種のページ構成(追加6種は16:9専用)+対応表
 │   ├── cover.md  figure-notes.md  two-figures.md  figure-table.md  dense-table.md
 │   ├── method.md  equation.md  key-numbers.md  summary.md  references.md
+│   ├── matched-comparison.md  small-multiples-6.md  overview-detail.md
+│   ├── ablation.md  error-diagnosis.md  evidence-next.md
 │   └── 16x9.md
 ├── guides/                    使い方の手引き
+│   ├── layout-selection.md    基本10種と追加6種の選び分け
 │   ├── use-cases.md           学会発表・研究紹介・進捗報告の組み方、ユーザビリティ
 │   ├── figures.md             図の作成フロー(模式図 SVG / matplotlib)
 │   ├── equations.md           LaTeX の書き方・変換・取り出し
@@ -61,6 +74,7 @@ research-slide-design/
 │   ├── latex_eq.py            LaTeX → PowerPoint ネイティブ数式(--convert / --extract)
 │   └── contrast.py            色のコントラスト比の検査(WCAG 2.x)
 ├── examples/
+│   ├── build_layout_gallery.py  追加レイアウト6種の見本(16:9)
 │   ├── build_sample.py        見本デッキ(16:9、7 枚)を作る
 │   ├── overview_figure.py     模式図(SVG)の見本。docs/ の図を作る
 │   └── out/                   sample_16x9.pptx / .pdf
@@ -79,6 +93,13 @@ research-slide-design/
 # 見本デッキを作る(依存は uv が一時的に用意する)
 uv run --no-project --with python-pptx --with lxml --with latex2mathml \
   --with matplotlib --with numpy --with scikit-learn python examples/build_sample.py
+
+# 追加レイアウト6種の見本を作る
+uv run --no-project --with python-pptx --with lxml --with matplotlib --with numpy \
+  python examples/build_layout_gallery.py
+
+# 追加見本を PDF 化する(macOS + PowerPoint)
+scripts/pptx2pdf.sh examples/out/layout_gallery/layout_gallery_16x9.pptx examples/out/layout_gallery/layout_gallery_16x9.pdf
 
 # PDF と PNG にして目視する(macOS + PowerPoint)
 scripts/pptx2pdf.sh examples/out/sample_16x9.pptx examples/out/sample_16x9.pdf

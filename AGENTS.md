@@ -8,7 +8,7 @@
 2. 依頼を `guides/slide-brief.md` の書式に落とす。用途ごとの構成は `guides/use-cases.md`。**出典・数値がそろっていない欄は推測せず質問する。**
 3. 比率は指定がなければ **16:9**(`tokens/spacing-16x9.json`、配置は `layouts/16x9.md`)。
 4. 値は `tokens/*.json` から取る。色・文字サイズ・余白を自分で決めたり直書きしたりしない。
-5. ページ構成は `layouts/` の 10 種から選ぶ。
+5. ページ構成は `layouts/` の 16 種(基本10種+16:9専用の追加6種)から選ぶ。 追加6種は16:9専用。選び分けは `guides/layout-selection.md`、見本は `examples/build_layout_gallery.py`。
 6. 図は `guides/figures.md` の流れで作る(グラフは matplotlib + `lib/research.mplstyle`、模式図は SVG)。数値はデータから計算する。
 7. 組むときは `lib/research_deck.py`(`Deck` / `Slide`)を使う。見本は `examples/build_sample.py`。
 8. 数式は LaTeX で書き、`Slide.equation()`(`tools/latex_eq.py`)で入れる(`guides/equations.md`)。

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "matched-comparison",
+    "title": "同じ条件で比較すると、構成Bの誤差が小さい（見本）",
+    "purpose": "対照実験、前後比較、従来法と提案法の比較",
+    "difference": "two-figuresの派生。左右を対称にし、比較条件と対応する根拠を固定する。"
+  },
+  {
+    "id": "small-multiples-6",
+    "title": "6条件の変化を、共通軸で一度に比較する（見本）",
+    "purpose": "温度・試料・期間などの複数条件を一覧する",
+    "difference": "two-figuresの派生。3枚1列から6枚2段へ拡張し、短い条件名で統一する。"
+  },
+  {
+    "id": "overview-detail",
+    "title": "全体の傾向と局所のずれを、同じページで示す（見本）",
+    "purpose": "ピーク、交点、外挿域など局所的な差を説明する",
+    "difference": "figure-notesの派生。右欄を説明文から拡大図2枚へ置換し、範囲を明記する。"
+  },
+  {
+    "id": "ablation",
+    "title": "要素を一つずつ除き、誤差への寄与を確かめる（見本）",
+    "purpose": "前処理、モデル要素、データ源の寄与を検証する",
+    "difference": "figure-tableの用途特化。結果の順位だけでなく、何を除いたかを対応表で示す。"
+  },
+  {
+    "id": "error-diagnosis",
+    "title": "誤差の平均値に加え、偏りと大きな残差を確認する（見本）",
+    "purpose": "平均指標だけでは見えない系統誤差や外れ値を調べる",
+    "difference": "two-figuresとfigure-tableの組合せ。位置・分布・代表例の3種類の根拠を固定する。"
+  },
+  {
+    "id": "evidence-next",
+    "title": "結論ごとに根拠と限界を結び、次の検証を決める（見本）",
+    "purpose": "研究MTGの判断、考察、追加実験の相談に使う",
+    "difference": "summaryの派生。3段組の要約から、結論・根拠・限界・次の検証の対応表にする。"
+  }
+]

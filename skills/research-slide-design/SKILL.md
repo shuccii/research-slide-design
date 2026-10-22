@@ -13,7 +13,7 @@ description: 研究・高密度デザインシステム(白黒基調・16:9 標�
 2. 依頼を `guides/slide-brief.md` の書式に落とす。用途(学会発表・研究紹介・進捗報告)は `guides/use-cases.md`。出典・数値が足りなければ質問する。
 3. 比率は指定がなければ 16:9(`tokens/spacing-16x9.json`、`layouts/16x9.md`)。4:3 指定時は `tokens/spacing.json`。
 4. 値は tokens から取る。書体は PowerPoint 用に `Hiragino Kaku Gothic ProN W3` / `W6`(ファミリー名だけだと代替される)。色は roles の場所だけ。表は色なし・黒罫線。
-5. レイアウトは `layouts/*.md` の 10 種。本文領域に 0.6 in を超える空きを残さない。空いたら**まず文字と図を大きくし**(typography の max まで)、それでも空けば条件表 → 要点数値 → 注 → 関連文献を足す。
+5. レイアウトは `layouts/*.md` の 16 種(基本10種+16:9専用の追加6種)。本文領域に 0.6 in を超える空きを残さない。空いたら**まず文字と図を大きくし**(typography の max まで)、それでも空けば条件表 → 要点数値 → 注 → 関連文献を足す。 追加6種は16:9専用。選び分けは `guides/layout-selection.md`、見本は `examples/build_layout_gallery.py`。
 6. 図は `guides/figures.md`: グラフは `use_chart_style()` で貼り付け枠の実寸に描く。模式図は構成をノードと矢印のリストにしてから SVG で描き、`scripts/export_svg.sh` で書き出して目視・最小文字を検査する。
 7. 組むのは `lib/research_deck.py`(見本 `examples/build_sample.py`)。数式は `Slide.equation(latex, …)`。Word がない環境では `$$ … $$` のプレースホルダーになり、後で `tools/latex_eq.py deck.pptx --convert`。全式の LaTeX は `--extract` で取り出せる。
 8. 引用は `tokens/citation.json`: 本文 [n]、図の直下に出典区分、ページ下端に短縮形、最終ページに文献表と図表の出典表。DOI と Web の確認日を書く。

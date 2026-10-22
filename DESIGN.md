@@ -92,7 +92,7 @@
 
 ## レイアウト
 
-`layouts/` の 10 種: cover / figure-notes / two-figures / figure-table / dense-table / method / equation / key-numbers / summary / references。16:9 の配置は `layouts/16x9.md`。
+`layouts/` の 16 種(基本10種+16:9専用の追加6種): cover / figure-notes / two-figures / figure-table / dense-table / method / equation / key-numbers / summary / references / matched-comparison / small-multiples-6 / overview-detail / ablation / error-diagnosis / evidence-next。16:9 の配置は `layouts/16x9.md`。追加6種の用途と基本レイアウトとの関係は `guides/layout-selection.md`。4:3では基本10種から選ぶ。
 
 ## 納品前チェック
 

@@ -4,3 +4,4 @@ __pycache__/
 ~$*.pptx
 examples/out/png/
 examples/out/*.png
+examples/out/layout_gallery/assets/

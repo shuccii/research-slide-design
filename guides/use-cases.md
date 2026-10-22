@@ -36,3 +36,7 @@
 ## ポスターに転用するとき
 
 スライドの図(SVG/PDF)と表をそのまま使い、文字はポスターの規定(通常 24pt 以上)に合わせて描き直す。縮小・拡大だけで済ませない。
+
+## 追加レイアウトを選ぶ
+
+詳細は [レイアウトの選び分け](layout-selection.md)。学会の結果比較には `matched-comparison`、局所の説明には `overview-detail`。進捗報告の検証には `ablation` と `error-diagnosis`、相談事項の整理には `evidence-next`。多条件を同時に見る場合は `small-multiples-6` を使う。追加6種は16:9専用。
