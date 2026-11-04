@@ -1,12 +1,12 @@
-# 研究・高密度の図の様式(tokens/charts.json)。use_chart_style() で読み込む。
+# 研究スライドの図の様式(tokens/charts.json)。use_chart_style() で読み込む。
 font.family: sans-serif
 font.sans-serif: Hiragino Sans, Hiragino Kaku Gothic ProN, Yu Gothic, Meiryo, Noto Sans CJK JP, DejaVu Sans
-font.size: 12
-axes.titlesize: 12
-axes.labelsize: 12
-xtick.labelsize: 12
-ytick.labelsize: 12
-legend.fontsize: 12
+font.size: 16
+axes.titlesize: 16
+axes.labelsize: 16
+xtick.labelsize: 16
+ytick.labelsize: 16
+legend.fontsize: 16
 text.color: 1A1A1A
 axes.labelcolor: 404040
 axes.edgecolor: 404040
@@ -19,8 +19,8 @@ grid.color: E6E6E6
 grid.linewidth: 0.8
 xtick.color: 404040
 ytick.color: 404040
-lines.linewidth: 1.5
-lines.markersize: 5
+lines.linewidth: 2.0
+lines.markersize: 7
 axes.prop_cycle: cycler(color=['1A1A1A', '0072B2', 'D55E00', '009E73', 'CC79A7'])
 legend.frameon: False
 figure.dpi: 150

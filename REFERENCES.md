@@ -15,7 +15,7 @@ ACS 風・番号式。tokens・DESIGN.md・guides の [n] はこの番号を指�
 6. Tufte, E. R. The Visual Display of Quantitative Information, 2nd ed.; Graphics Press: Cheshire, CT, 2001.
    — data-ink ratio(図のインクはデータに使う)。グリッドを薄く、枠線を減らす根拠。
 7. デジタル庁. デジタル庁デザインシステム: タイポグラフィ. https://design.digital.go.jp/dads/foundations/typography/ (accessed 2026-10-05).
-   — 14 CSS px 未満は原則使わない、本文行間 150–175%。本系統は投影スライド用に本文 16pt・注 12pt・出典 10pt とし、10pt は出典欄に限る。
+   — 文字サイズの段階(64・57・48 / 45・36・32・28・26・24・22・20・18・16)、14 CSS px 未満は原則使わない、見出しの行間 140%・本文 150% 以上、字間(26 以下 2%、28–36 1%)。本系統は px を pt に読み替え、本文 24pt・表とラベル 20pt・出典 14pt とする。
 8. Wong, B. Points of View: Color Blindness. Nat. Methods 2011, 8 (6), 441. https://doi.org/10.1038/nmeth.1618
 9. W3C. Web Content Accessibility Guidelines (WCAG) 2.1, Success Criteria 1.4.1, 1.4.3, 1.4.11. https://www.w3.org/TR/WCAG21/ (accessed 2026-10-05).
    — コントラスト比の計算式(相対輝度)。`tools/contrast.py` はこの式を使う。
@@ -23,6 +23,17 @@ ACS 風・番号式。tokens・DESIGN.md・guides の [n] はこの番号を指�
     — 日本の参照文献の基準(2012 年に事業終了、現在も大学図書館で参照)。和文献の書き方の確認に使う。
 11. Banik, G. M.; Baysinger, G.; Kamat, P. V.; Pienta, N. J., Eds. The ACS Guide to Scholarly Communication; American Chemical Society: Washington, DC, 2020. https://doi.org/10.1021/acsguide
     — 文献表の書式(ACS 風)の典拠(書誌のみ。本文は未確認)。
+
+12. デジタル庁. デジタル庁デザインシステム: 余白. https://design.digital.go.jp/dads/foundations/spacing/ (確認 2026-11-04、2026-10-21 版の Markdown 配布物).
+    — 8 を基準にした少数の余白の段階、関連の近いものは近くに置く、空白や両端揃えで位置を調整しない。本系統の余白 3 段階(0.11・0.33・0.89 in)の根拠。
+13. デジタル庁. デジタル庁デザインシステム: レイアウト. https://design.digital.go.jp/dads/foundations/layout/ (確認 2026-11-04).
+    — カラム幅は本文の文字サイズの整数倍、列の間は原則として本文の 2 倍。本系統の列の間 0.667 in(本文 24pt の 2 倍)の根拠。
+14. デジタル庁. デジタル庁デザインシステム: 角の形状. https://design.digital.go.jp/dads/foundations/corner-shapes/ (確認 2026-11-04).
+    — 角丸を 5 段階で決め、図形の大きさに合わせて半径を変える。`tokens/shapes.json` の根拠。
+15. デジタル庁. デジタル庁デザインシステム: テーブル. https://design.digital.go.jp/dads/components/table/ (確認 2026-11-04).
+    — 見出し行と中身を黒い罫線で区切り見出しを太字、縦は上寄せ、数値は右寄せ、セルの結合は最小限。
+
+出典の書き方: 本系統は 12–15 の内容を参考に、スライド用に読み替えて作った(デジタル庁デザインシステムウェブサイト https://design.digital.go.jp/dads/ をもとに作成)。色の見本(プリミティブカラー)は採用していない。
 
 ## 確認できず採用しなかったもの
 

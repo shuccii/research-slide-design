@@ -44,6 +44,11 @@ NS = {
     "w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main",
 }
 INK = "1A1A1A"
+try:  # 式番号の大きさは tokens/typography.json の eq-number
+    import json as _json
+    EQNUM_PT = _json.loads((Path(__file__).resolve().parent.parent / "tokens" / "typography.json").read_text(encoding="utf-8"))["styles"]["eq-number"]["size"]
+except Exception:  # 単体で使うとき
+    EQNUM_PT = 20
 EQNUM = "404040"
 EQNUM_FONT = "Hiragino Kaku Gothic ProN W3"
 PLACEHOLDER_NAME = "latex-eq"  # 後で変換する LaTeX のプレースホルダー(図形名)
@@ -232,13 +237,13 @@ def _math_paragraph(latex: str, size_pt: float, color: str, align: str):
 
 def add_equation(slide, latex: str, x: float, y: float, w: float, h: float, size: float = 18,
                  number: int | str | None = None, align: str = "center", color: str = INK):
-    """スライドに別行立ての式を置く(単位 in)。number を渡すと右端に式番号 (n) を 12pt で付ける。
+    """スライドに別行立ての式を置く(単位 in)。number を渡すと右端に式番号 (n) を eq-number の大きさ(既定 20pt)で付ける。
 
     戻り値は式のテキストボックス(python-pptx の Shape)。PowerPoint で開くと数式として編集できる。
     """
     from pptx.util import Inches, Pt
 
-    num_w = 0.6 if number is not None else 0.0
+    num_w = 0.75 if number is not None else 0.0
     tb = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w - num_w), Inches(h))
     tf = tb.text_frame
     tf.word_wrap = True
@@ -279,7 +284,7 @@ def add_equation(slide, latex: str, x: float, y: float, w: float, h: float, size
         para.alignment = PP_ALIGN.RIGHT
         run = para.add_run()
         run.text = f"({number})"
-        run.font.size = Pt(12)
+        run.font.size = Pt(EQNUM_PT)
         from pptx.dml.color import RGBColor
         run.font.color.rgb = RGBColor.from_string(EQNUM)
         run.font.name = EQNUM_FONT
@@ -304,7 +309,7 @@ def add_latex_placeholder(slide, latex: str, x: float, y: float, w: float, h: fl
     from pptx.util import Inches, Pt
     from pptx.dml.color import RGBColor
     from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
-    num_w = 0.6 if number is not None else 0.0
+    num_w = 0.75 if number is not None else 0.0
     tb = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w - num_w), Inches(h))
     tb.name = PLACEHOLDER_NAME
     _set_alt(tb, latex)
@@ -325,7 +330,7 @@ def add_latex_placeholder(slide, latex: str, x: float, y: float, w: float, h: fl
         np_.alignment = PP_ALIGN.RIGHT
         r = np_.add_run()
         r.text = f"({number})"
-        r.font.size = Pt(12)
+        r.font.size = Pt(EQNUM_PT)
         r.font.color.rgb = RGBColor.from_string(EQNUM)
         r.font.name = EQNUM_FONT
     return tb

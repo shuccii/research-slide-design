@@ -64,7 +64,7 @@ NODES = [
     ("入力", ["依頼(slide-brief)", "データ・図の元", "文献(DOI・URL)"], "ink"),
     ("読む", ["AGENTS.md", "DESIGN.md", "guides/"], "ink"),
     ("値を取る", ["tokens/*.json", "色・文字・余白", "表・引用・図"], "accent"),
-    ("組む", ["lib/research_deck.py", "layouts/ の 10 種", "tools/latex_eq.py"], "ink"),
+    ("組む", ["lib/research_deck.py", "layouts/ の 16 種", "tools/latex_eq.py"], "ink"),
     ("確かめる", ["PDF → PNG で目視", "contrast.py", "納品前チェック"], "ink"),
 ]
 FLOW = [(0, 1), (1, 2), (2, 3), (3, 4)]
@@ -72,7 +72,7 @@ FLOW = [(0, 1), (1, 2), (2, 3), (3, 4)]
 
 def overview(path):
     s = SVG(1600, 900)
-    s.text(60, 70, "研究・高密度スライドのデザインシステム: AI エージェントが読む順番", 36, "ink", 600)
+    s.text(60, 70, "研究スライドのデザインシステム: AI エージェントが読む順番", 36, "ink", 600)
     s.line(60, 95, 1540, 95, "line-strong", 1.5)
     n = len(NODES)
     gap, x0 = 50, 60
@@ -85,10 +85,10 @@ def overview(path):
     # 下段: 出力と規則(表は色なし・黒罫線)
     s.line(60, 450, 1540, 450, "line-strong", 1.5)
     s.text(60, 510, "出力", 34, "ink", 600)
-    for i, t in enumerate(["16:9 の PPTX(4:3 も可)", "ネイティブ数式+代替テキストに LaTeX", "SVG / PDF / PNG の図と生成スクリプト", "文献表と図表の出典表"]):
+    for i, t in enumerate(["16:9 と 4:3 の PPTX", "ネイティブ数式+代替テキストに LaTeX", "SVG / PDF / PNG の図と生成スクリプト", "文献表と図表の出典表"]):
         s.text(60, 572 + i * 54, "・" + t, 30)
     s.text(820, 510, "守る規則", 34, "ink", 600)
-    rules = [("1 スライド 1 イシュー、タイトルは結論", "ink"), ("余白は文字・図を大きくして埋める", "ink"),
+    rules = [("1 スライド 1 イシュー、タイトルは結論", "ink"), ("要素は 3 つまで・日本語の下に英訳", "ink"),
              ("色は役割のある場所だけ(本研究 = 青)", "accent"), ("表は色なし・黒罫線", "ink"),
              ("出典のない数値・図は載せない", "alert")]
     for i, (t, c) in enumerate(rules):
@@ -100,7 +100,7 @@ def overview(path):
 # ---------- 図 2: 図の作成フロー(guides/figures.md、1600 × 520) ----------
 STEPS = [("1 入力を読む", ["元資料・データ", "貼る枠の大きさ"]), ("2 型を選ぶ", ["パイプライン", "ループ・比較 …"]),
          ("3 構成を文字に", ["ノードと矢印", "ラベルの出典"]), ("4 描く", ["Python で SVG", "色は roles"]),
-         ("5 書き出す", ["export_svg.sh", "PDF と PNG"]), ("6 確かめる", ["目視・最小 12 pt", "出典を図の下に"])]
+         ("5 書き出す", ["export_svg.sh", "PDF と PNG"]), ("6 確かめる", ["警告 0 件・目視", "出典を図の下に"])]
 
 
 def flow(path):
