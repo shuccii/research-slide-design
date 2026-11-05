@@ -16,9 +16,9 @@ references:                                  # 登場順。DOI か URL+確認日
   - "Author, A. A.; Author, B. B. Title. J. Abbr. Year, Vol (Issue), Pages. https://doi.org/..."
 
 slides:
-  - layout: figure-notes                     # layouts/ の 10 種から
-    title: 結論を 1 文で
-    message: 何を比べた図か
+  - layout: figure-notes                     # layouts/ の 16 種から。要素は 3 つまで
+    title: [結論を 1 文で, Conclusion in one sentence]   # 日本語と英語訳
+    message: [何を比べた図か, What the figure compares]
     figure: { data: path/to/data.csv, kind: line | scatter | parity | bar, source: 本研究 }
     numbers: [{ label: RMSE(提案法), value: 0.091, note: 従来法 0.490, ref: null }]
     points: [読み取り 1, 読み取り 2]

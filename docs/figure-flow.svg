@@ -30,7 +30,7 @@
 <line x1="1291.3333333333333" y1="140" x2="1317.3333333333333" y2="140" stroke="#1A1A1A" stroke-width="2.5" marker-end="url(#arrow)"/>
 <line x1="1323.3333333333333" y1="140" x2="1540.0" y2="140" stroke="#1A1A1A" stroke-width="5"/>
 <text x="1323.3333333333333" y="180.3" font-size="26" font-weight="600" fill="#1A1A1A" text-anchor="start" xml:space="preserve">6 確かめる</text>
-<text x="1323.3333333333333" y="222.10000000000002" font-size="22" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">目視・最小 12 pt</text>
+<text x="1323.3333333333333" y="222.10000000000002" font-size="22" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">警告 0 件・目視</text>
 <text x="1323.3333333333333" y="257.3" font-size="22" font-weight="300" fill="#1A1A1A" text-anchor="start" xml:space="preserve">出典を図の下に</text>
 <line x1="1431.6666666666665" y1="330" x2="1431.6666666666665" y2="380" stroke="#A04500" stroke-width="2" stroke-dasharray="8 6"/>
 <line x1="1431.6666666666665" y1="380" x2="926.3333333333334" y2="380" stroke="#A04500" stroke-width="2" stroke-dasharray="8 6"/>

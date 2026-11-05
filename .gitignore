@@ -5,3 +5,5 @@ __pycache__/
 examples/out/png/
 examples/out/*.png
 examples/out/layout_gallery/assets/
+examples/out/png_*/
+examples/out/layout_gallery/png_*/

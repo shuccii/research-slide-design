@@ -1,25 +1,27 @@
 # AGENTS.md — AI エージェント向け指示(Claude Code / Codex 共通)
 
-このリポジトリは、学会発表・研究紹介・進捗報告のスライドを **白黒基調・高密度** で作るためのデザインシステム。AI が仕様を読んで、毎回同じ見た目を再現するためのもの。
+このリポジトリは、学会発表・研究紹介・進捗報告のスライドを **白黒基調・大きな文字・日英併記** で作るためのデザインシステム。AI が仕様を読んで、毎回同じ見た目を再現するためのもの。
 
 ## 作業の順番
 
 1. `DESIGN.md` を読む(適用範囲・原則・版面・色・表・数式・引用・納品前チェック)。
 2. 依頼を `guides/slide-brief.md` の書式に落とす。用途ごとの構成は `guides/use-cases.md`。**出典・数値がそろっていない欄は推測せず質問する。**
-3. 比率は指定がなければ **16:9**(`tokens/spacing-16x9.json`、配置は `layouts/16x9.md`)。
+3. 比率は指定がなければ **16:9**(6 カラム、`tokens/spacing-16x9.json`)。4:3 は 4 カラム(`tokens/spacing.json`)。組み分けは `layouts/ratios.md`。
 4. 値は `tokens/*.json` から取る。色・文字サイズ・余白を自分で決めたり直書きしたりしない。
-5. ページ構成は `layouts/` の 16 種(基本10種+16:9専用の追加6種)から選ぶ。 追加6種は16:9専用。選び分けは `guides/layout-selection.md`、見本は `examples/build_layout_gallery.py`。
+5. ページ構成は `layouts/` の 16 種(基本 10 種+派生 6 種、どれも両方の比率で使える)から選ぶ。1 枚の要素は 3 つまで。選び分けは `guides/layout-selection.md`、見本は `examples/build_layout_gallery.py`。
 6. 図は `guides/figures.md` の流れで作る(グラフは matplotlib + `lib/research.mplstyle`、模式図は SVG)。数値はデータから計算する。
-7. 組むときは `lib/research_deck.py`(`Deck` / `Slide`)を使う。見本は `examples/build_sample.py`。
+7. 組むときは `lib/research_deck.py`(`Deck` / `Slide`)を使う。文字は (日本語, 英語訳) の組で渡す。`deck.save(..., strict=True)` で警告(はみ出し・本文下端超え・英語訳の長すぎ)を 0 件にする。見本は `examples/build_sample.py`。
 8. 数式は LaTeX で書き、`Slide.equation()`(`tools/latex_eq.py`)で入れる(`guides/equations.md`)。
-9. `scripts/pptx2pdf.sh` → `scripts/pdf2png.swift` で全ページを PNG にして目視し、はみ出し・重なり・0.6 in を超える空き・代替フォントがなくなるまで直す。
+9. `scripts/pptx2pdf.sh` → `scripts/pdf2png.swift` で全ページを PNG にして目視し、はみ出し・重なり・タイトルの折り返し・代替フォントがなくなるまで直す。
 10. 報告: 保存先、枚数、出典一覧、推測・未確認の点、目視で直した点。
 
 ## 守ること
 
 - 学会・提出先・所属組織の書式指定が最優先。
 - 1 スライド 1 イシュー。タイトルは結論を 1 文で。
-- 余白が残ったら、まず文字と図を大きくする(`typography.json` の `max` まで)。それでも空けば情報を足す。
+- 1 枚の要素は 3 つまで。余白は残してよい。入らなければ文字を小さくせず、文を短くするかページを分ける。
+- 日本語の各文の直下に英語訳(日本語より長くしない)。略語は初出で説明し、軸に向き、結論に根拠のページを書く(第三者にわかるように)。
+- 角丸は注・要点数値の面と枠だけ(`tokens/shapes.json`)。表・グラフ・写真は四角。影は付けない。
 - 色は `colors.json` の `roles` の場所だけ。色だけで区別しない。**表は色なし・黒罫線。**
 - 数値・事実を作らない。確認できない数値・図・書誌は載せない。見本・架空データは「見本データ」と明記する。
 - 他人の図はライセンスを確認し、`Adapted from [n]` / `Reproduced from [n]` を書く。
